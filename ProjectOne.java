@@ -35,7 +35,7 @@ public class ProjectOne {
         try (PreparedStatement preparedStatement = conn.prepareStatement(insertQuery)) {
             try (Scanner scanner = new Scanner(System.in)) {
 
-                    System.out.println("Enter your name");
+                    System.out.println("Enter your name: ");
                     String name = scanner.nextLine();
                     System.out.println("Enter your email");
                     String email = scanner.nextLine();
