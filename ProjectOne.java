@@ -37,7 +37,7 @@ public class ProjectOne {
 
                     System.out.println("Enter your name: ");
                     String name = scanner.nextLine();
-                    System.out.println("Enter your email");
+                    System.out.println("Enter your email: ");
                     String email = scanner.nextLine();
                     System.out.println("Enter your age");
                     int age = scanner.nextInt();
