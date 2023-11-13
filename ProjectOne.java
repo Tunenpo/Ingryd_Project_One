@@ -15,7 +15,7 @@ public class ProjectOne {
     public void createTable(){
         try (Statement statement = conn.createStatement();) {
             // create table sql query
-            String createTableQuery = "CREATE TABLE user ("
+            String createTableQuery = "CREATE TABLE IF NOT EXISTS user ("
                     + "id INT AUTO_INCREMENT," + "name VARCHAR(100)," + "email VARCHAR(100),"
                     + "age INT,"
                     + "location VARCHAR(100),"
@@ -34,7 +34,6 @@ public class ProjectOne {
         String insertQuery = "INSERT INTO user (name, email, age, location, designation) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = conn.prepareStatement(insertQuery)) {
             try (Scanner scanner = new Scanner(System.in)) {
-                for (int i = 0; i < 10; i++) {
 
                     System.out.println("Enter your name");
                     String name = scanner.nextLine();
@@ -54,7 +53,7 @@ public class ProjectOne {
                     preparedStatement.setString(4, location);
                     preparedStatement.setString(5, designation);
                     preparedStatement.executeUpdate();
-                }
+
             }
 
         } catch (SQLException ex) {
